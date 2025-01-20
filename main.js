@@ -33,6 +33,12 @@ HINT: Use the modulo operator (%) Google it! 😊
 
 export const oddOrEven = () => {
   //your code here
+  if (num % 2 === 0) {
+    return "Even";
+  } else {
+    return "Odd";
+  }
+  
 };
 
 /******************************************************************************
@@ -49,6 +55,7 @@ Example: "This is cool" should return "THIS IS COOL!"
 
 export function makeMeLoud() {
   //your code here
+  return str.toUpperCase() + '!'
 }
 
 /******************************************************************************
