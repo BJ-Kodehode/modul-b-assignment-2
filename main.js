@@ -107,9 +107,9 @@ Example 2: ["One", "Two", "Three", "Four", "Five", "Six"] should return
 ["Two", "Three", "Four", "Five"]
 ******************************************************************************/
 
-export function arrayTrimmer() {
+export function arrayTrimmer(arr) {
   //your code here
-  
+  return arr.slice(1, arr.length - 1);
 }
 
 /******************************************************************************
@@ -131,8 +131,9 @@ Example3: "   hard        " should return "fun"
 
 ******************************************************************************/
 
-export const cleanAndFun = () => {
+export const cleanAndFun = (text) => {
   //your code here
+  return text.trim().replace('hard', 'fun');
 };
 
 /******************************************************************************
@@ -157,6 +158,24 @@ Use array methods to do the following:
 
 export function marvelEditor() {
   //your code here
+  const heroes = ["Spider-Man", "Thor", "Hulk", "Doctor Strange", "Iron Man", "Black Widow"];
+
+  // Remove the first hero (Spider-Man)
+  heroes.shift();
+
+  // Replace "Doctor Strange" with "Skrull"
+  const index = heroes.indexOf("Doctor Strange");
+  if (index !== -1) {
+    heroes[index] = "Skrull";
+  }
+
+  // Use splice to remove "Thor" and "Hulk" and add "Captain America"
+  const thorIndex = heroes.indexOf("Thor");
+  const hulkIndex = heroes.indexOf("Hulk");
+  heroes.splice(thorIndex, 2, "Captain America");
+
+  // Join the array with "💪" between each hero
+  return heroes.join("💪");
 }
 
 /******************************************************************************
@@ -186,8 +205,17 @@ Return "😎Primitive values only😎"
 
 ******************************************************************************/
 
-export function coolMaker() {
+export function coolMaker(input) {
   //your code here
+  if (typeof input === 'string') {
+    return `😎${input}😎`;
+  } else if (typeof input === 'number') {
+    return `😎${(input * 2).toString()}😎`;
+  } else if (typeof input === 'boolean') {
+    return input ? '😎Yeah😎' : '😎Chill😎';
+  } else {
+    return '😎Primitive values only😎';
+  }
 }
 
 /******************************************************************************
@@ -213,6 +241,15 @@ Example3: (["One", "Two", "Three"], "Four") --> ["One", "Two", "Three", "Four"]
 Example4: (["One", "Two", "Three"], "Two") --> ["One", "Three"]
 ******************************************************************************/
 
-export const addOrRemove = () => {
+export const addOrRemove = (arr, str) => {
   //your code here
+  const index = arr.indexOf(str);
+  if (index !== -1) {
+    // If the string is found, remove it
+    arr.splice(index, 1);
+  } else {
+    // If the string is not found, add it to the end
+    arr.push(str);
+  }
+  return arr;
 };
