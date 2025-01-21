@@ -17,6 +17,7 @@ Read the terminal output before and after to see the difference
 export function start() {
   //your code here
   // return true
+  return true;
 };
 
 /******************************************************************************
@@ -31,9 +32,9 @@ received is an even number.
 HINT: Use the modulo operator (%) Google it! 😊
 ******************************************************************************/
 
-export const oddOrEven = () => {
+export const oddOrEven = (number) => {
   //your code here
-  if (num % 2 === 0) {
+  if (number % 2 === 0) {
     return "Even";
   } else {
     return "Odd";
@@ -53,9 +54,10 @@ Example: "This is cool" should return "THIS IS COOL!"
 
 ******************************************************************************/
 
-export function makeMeLoud() {
+export function makeMeLoud(str) {
   //your code here
   return str.toUpperCase() + '!'
+  
 }
 
 /******************************************************************************
@@ -79,8 +81,19 @@ The function should return:
 
 ******************************************************************************/
 
-export const greeter = () => {
+export const greeter = (name, hour) => {
   //your code here
+  if (hour < 0 || hour > 23) {
+    return "Invalid time";
+  } else if (hour >= 0 && hour <= 5) {
+    return `Good night ${name}`;
+  } else if (hour >= 6 && hour <= 11) {
+    return `Good morning ${name}`;
+  } else if (hour >= 12 && hour <= 17) {
+    return `Good day ${name}`;
+  } else {
+    return `Good evening ${name}`;
+  }
 };
 
 /******************************************************************************
@@ -99,7 +112,11 @@ Example 2: ["One", "Two", "Three", "Four", "Five", "Six"] should return
 
 export function arrayTrimmer() {
   //your code here
+  return arr.slice(1. arr.lengt -1);
 }
+console.log(arrayTrimmer(["Red", "Green", "Blue", "Yellow"]));
+// Output: ["Green", "Blue"]
+
 
 /******************************************************************************
 5.
