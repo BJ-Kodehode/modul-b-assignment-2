@@ -78,7 +78,7 @@ The function should return:
 
 ******************************************************************************/
 
-export const greeter = () => {
+export const greeter = (name, hour) => {
   //your code here
   if (hour < 0 || hour > 23) {
     return "Invalid time";
