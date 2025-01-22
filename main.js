@@ -130,11 +130,12 @@ Example2: " It's hard to use methods " should return "It's hard to use methods"
 Example3: "   hard        " should return "fun"
 
 ******************************************************************************/
-
+// Define the function `celandAndFun` that take one parmeer `text`
 export const cleanAndFun = (text) => {
-  //your code here
   return text.trim().replace('hard', 'fun');
 };
+ 
+
 
 /******************************************************************************
 6.
@@ -156,9 +157,9 @@ Use array methods to do the following:
  Return the resulting array.
 ******************************************************************************/
 
-export function marvelEditor() {
+export function marvelEditor(heroes) {
   //your code here
-  const heroes = ["Spider-Man", "Thor", "Hulk", "Doctor Strange", "Iron Man", "Black Widow"];
+  
 
   // Remove the first hero (Spider-Man)
   heroes.shift();
